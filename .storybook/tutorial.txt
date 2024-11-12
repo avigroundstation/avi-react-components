@@ -1,0 +1,7 @@
+1- component
+    1. define proprties that are not inherited ??
+    2. 
+2-storybook
+    1. Story definition : title , component, tags, argTypes 
+    2. Story Template
+    3. Story preset : create bind template (template.bind) and example of subset of the component properties

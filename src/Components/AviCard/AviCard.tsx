@@ -1,6 +1,6 @@
 import { Button, Card, CardActions, CardContent, CardHeader, CardProps, Typography } from "@mui/material";
 import React, { Fragment, ReactNode } from "react";
-
+import { theme } from '../../theme';
 
 interface AviCardProps {
     title?: string | ReactNode;
@@ -8,6 +8,7 @@ interface AviCardProps {
     actions?: ReactNode;
     children?: ReactNode;
     contentVariant?: 'stretch' | 'regular'
+    elevation?:number
 }
 
 export default function AviCard({ 
@@ -15,20 +16,31 @@ export default function AviCard({
     subtitle,
     actions,
     children,
-    contentVariant = 'regular'
+    contentVariant = 'regular',    
+    elevation=24
  }: AviCardProps) {
-    return (<Card  style={contentVariant === 'stretch' ? {height: '100%', width: '100%', display: 'flex', flexDirection:'column'} : {}}>
+    return (<Card variant="elevation" elevation={elevation} style={contentVariant === 'stretch' ? {height: '100%', width: '100%', display: 'flex', flexDirection:'column'} : {}}>
+<div style={{display:'flex', justifyContent:'space-between'}}>
         {
-            title && <CardHeader title={title}/>
+            title && <CardHeader title={title} subheader={subtitle}
+                // <div>
+                // {title}
+                // <Typography variant='subtitle2' sx={{fontSize:"1.2rem", color:theme.palette.subtitle}}>{subtitle}</Typography>
+                // </div>
+                // } 
+                />
         }
-        {
-            children && <CardContent style={contentVariant === 'stretch' ? {flex: 1, backgroundColor: "blue" } : {}}>
-                {children}
-            </CardContent>
-        }
-        {actions && <CardActions>
+                {actions && <CardActions>
             {actions}
         </CardActions>}
+        </div>
+
+            <div>
+           
+            {children && <CardContent style={contentVariant === 'stretch' ? {flex: 1, backgroundColor: "blue" } : {}}>
+                {children}
+            </CardContent>}
+            </div>
     </Card>
     );
 

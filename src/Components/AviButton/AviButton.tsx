@@ -1,12 +1,39 @@
 import { Button, ButtonProps } from "@mui/material";
-import React from "react";
+import React, { ReactNode } from "react";
 
+type VariantType = 'primary'|'secondary'|'text'
 
-interface AviButtonProps extends ButtonProps{
+interface AviButtonProps{
 
+    variant:VariantType
+    children?: ReactNode;
+    onClick:()=>{}
 }
 
-export default function AviButton  (props: AviButtonProps){
-    return <Button {...props}></Button>
+
+interface ButtonPropsStyle {
+    variant: 'contained'| 'outlined'| 'text'
+}
+
+
+const primaryStyle: ButtonPropsStyle = {variant:'contained'}
+const secondaryStyle: ButtonPropsStyle = {variant:'outlined'}
+const textStyle: ButtonPropsStyle = {variant:'text'}
+
+const getStyle = (variant:VariantType)=>{
+    switch (variant) {
+        case 'primary':
+            return primaryStyle
+        case 'secondary':
+            return secondaryStyle
+        case 'text':
+            return textStyle
+        default:
+            return primaryStyle
+    }
+}
+
+export default function AviButton  ({variant,onClick,children}: AviButtonProps){
+    return <Button  {...getStyle(variant)} onClick={onClick}>{children}</Button>
 
 }
