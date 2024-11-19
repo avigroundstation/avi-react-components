@@ -25,7 +25,7 @@ export default {
 } as Meta;
 
 const Template: StoryFn = (args) => (
-  <div style={{ height: '600px', width: '100%', backgroundColor: 'pink' }}>
+  <div style={{ height: '600px', width: '100%' }}>
     <AviCard
       elevation={args.elevation}
       contentVariant={args.contentVariant}
@@ -40,7 +40,7 @@ const Template: StoryFn = (args) => (
   </div>
 );
 
-const body = <div style={{ height: '100%', width: '100%', display: 'flex', flexDirection: 'column', background:'lightblue' }}>
+const body = <div style={{ height: '100%', width: '100%', display: 'flex', flexDirection: 'column' }}>
 <div style={{ height: '20%' }}>
   <Typography variant='h5'>Text</Typography>
   {/* <Typography variant='body2' sx={{fontSize:"1.2rem", color:theme.palette.subtitle}}>Text</Typography> */}
