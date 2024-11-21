@@ -1,0 +1,8 @@
+import{f as m}from"./index-DQLiMaGX.js";import{R as p}from"./index-DRjF_FHU.js";import{B as u}from"./Button-BPiXjJSx.js";import"./createSimplePaletteValueFilter-C-tVWKon.js";import"./DefaultPropsProvider-B2glyH_M.js";import"./jsx-runtime-DR9Q75dM.js";import"./ButtonBase-C629eIma.js";const r={variant:"contained",fontSize:"2rem !important"},l={variant:"outlined"},d={variant:"text"},y=t=>{switch(t){case"primary":return r;case"secondary":return l;case"text":return d;default:return r}};function o({variant:t,onClick:s,children:c}){return p.createElement(u,{...y(t),onClick:s},c)}o.__docgenInfo={description:"",methods:[],displayName:"AviButton",props:{variant:{required:!0,tsType:{name:"union",raw:'"primary" | "secondary" | "text"',elements:[{name:"literal",value:'"primary"'},{name:"literal",value:'"secondary"'},{name:"literal",value:'"text"'}]},description:""},children:{required:!1,tsType:{name:"ReactNode"},description:""},onClick:{required:!0,tsType:{name:"signature",type:"function",raw:"() => {}",signature:{arguments:[],return:{name:"signature",type:"object",raw:"{}",signature:{properties:[]}}}},description:""}}};const w={title:"Example/AviButton",component:o,parameters:{layout:"centered"},tags:["autodocs"],argTypes:{children:{control:"text"}},args:{onClick:m()}},e={args:{variant:"primary",children:"test"}};var a,n,i;e.parameters={...e.parameters,docs:{...(a=e.parameters)==null?void 0:a.docs,source:{originalSource:`{
+  args: {
+    // primary: '',
+    variant: "primary",
+    // label: 'Button',
+    children: 'test'
+  }
+}`,...(i=(n=e.parameters)==null?void 0:n.docs)==null?void 0:i.source}}};const T=["Primary"];export{e as Primary,T as __namedExportsOrder,w as default};
