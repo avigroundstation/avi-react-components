@@ -12,7 +12,7 @@ interface AviRadioButtonsProps {
   radioListLables: string[];
   defaultValue: string;
   value: string;
-  OnChangeFunction: () => void;
+  OnChangeFunction: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 // type VariantType = "primary" | "secondary" | "text";
