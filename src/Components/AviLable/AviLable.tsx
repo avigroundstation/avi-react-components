@@ -1,4 +1,4 @@
-import {  Typography, TypographyProps } from "@mui/material";
+import { Typography, TypographyProps } from "@mui/material";
 import React, { ReactNode } from "react";
 
 type VariantType =
@@ -6,7 +6,8 @@ type VariantType =
   | "MainTitle"
   | "SubTitle"
   | "Lable"
-  | "ItemLable";
+  | "ItemLable"
+  | "readOnly";
 
 interface AviLableProps {
   LableVariant: VariantType;
@@ -42,6 +43,10 @@ const getColorVariant = ({
     case "SubTitle":
       c = "black";
       v = "h5";
+      break;
+    case "readOnly":
+      c = "gray";
+      v = "body1";
       break;
   }
   if (color) {
