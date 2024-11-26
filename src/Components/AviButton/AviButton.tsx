@@ -1,4 +1,4 @@
-import { Button, ButtonProps } from "@mui/material";
+import { Button } from "@mui/material";
 import React, { ReactNode } from "react";
 
 type VariantType = "primary" | "secondary" | "text";
