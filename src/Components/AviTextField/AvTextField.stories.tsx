@@ -23,7 +23,7 @@ const Template: StoryFn = (args) => {
     <AviTextField
       label={args.label}
       placeholder={args.placeholder}
-      shrink={args.shrink}
+      variant="password"
       onChange={() => {}}
     />
   );

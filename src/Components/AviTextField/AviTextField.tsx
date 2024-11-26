@@ -1,26 +1,43 @@
-import { TextField } from "@mui/material";
-import React, { ReactNode } from "react";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
+import { Button, TextField } from "@mui/material";
+import React, { useState } from "react";
+
+type TextFieldVariant = "text" | "password";
 
 interface AviTextFieldProps {
   label: string;
   placeholder?: string;
-  shrink?: boolean | undefined;
   onChange: () => void;
+  variant?: TextFieldVariant;
 }
 
 export default function AviTextField({
   label,
   placeholder,
-  shrink,
   onChange,
+  variant,
 }: AviTextFieldProps) {
-  return (
-    <TextField
-      label={label}
-      placeholder={placeholder}
-      onChange={onChange}
-      fullWidth
-      InputLabelProps={{ shrink: shrink }}
-    ></TextField>
-  );
+  const [show, setShow] = useState(false);
+    return (
+      <TextField
+        label={label}
+        fullWidth
+        type={variant==="text" ? "text" :!show? "password":"text"}
+        InputProps={
+          variant === "password"
+            ? {
+                endAdornment: (
+                  <Button onClick={() => setShow((prev) => !prev)}>
+                    {show ? <Visibility /> : <VisibilityOff />}
+                  </Button>
+                ),
+              }
+            : {}
+        }
+        placeholder={placeholder}
+        onChange={onChange}
+        // InputLabelProps={{ shrink: shrink }}
+      />
+    );
+ 
 }
