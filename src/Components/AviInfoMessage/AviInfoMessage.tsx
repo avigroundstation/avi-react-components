@@ -2,13 +2,15 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogContent from "@mui/material/DialogContent";
 import DialogActions from "@mui/material/DialogActions";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import DialogTitle from "@mui/material/DialogTitle";
+import DialogTitle, { DialogTitleProps } from "@mui/material/DialogTitle";
 import { useTheme } from "@mui/material/styles";
 import Button from "@mui/material/Button";
-import Dialog, { DialogProps } from "@mui/material/Dialog";
+import Dialog from "@mui/material/Dialog";
 import * as React from "react";
 
-type VariantType = "error" | "info";
+type ExcludeStartingWithText<T> = T extends `text${string}` ? never : T;
+
+type VariantType = ExcludeStartingWithText<DialogTitleProps["color"]>;
 
 interface AviInfoMessageProps {
   open: boolean;

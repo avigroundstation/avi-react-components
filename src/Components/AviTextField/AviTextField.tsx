@@ -36,7 +36,6 @@ export default function AviTextField({
         }
         placeholder={placeholder}
         onChange={onChange}
-        // InputLabelProps={{ shrink: shrink }}
       />
     );
  

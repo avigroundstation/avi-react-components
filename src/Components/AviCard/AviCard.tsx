@@ -1,14 +1,10 @@
 import {
-  Button,
   Card,
   CardActions,
   CardContent,
   CardHeader,
-  CardProps,
-  Typography,
 } from "@mui/material";
-import React, { Fragment, ReactNode } from "react";
-import { theme } from "../../theme";
+import React, {  ReactNode } from "react";
 
 interface AviCardProps {
   title?: string | ReactNode;

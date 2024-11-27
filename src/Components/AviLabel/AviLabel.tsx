@@ -10,7 +10,7 @@ type VariantType =
   | "readOnly";
 
 interface AviLabelProps {
-  LabelVariant: VariantType;
+  labelVariant: VariantType;
   labelColor?: TypographyProps["color"];
   children?: string | ReactNode;
 }
@@ -57,13 +57,13 @@ const getColorVariant = ({
 
 export default function AviButton({
   children,
-  LabelVariant,
+  labelVariant,
   labelColor,
 }: AviLabelProps) {
   
   const { color, variant } = getColorVariant({
     color: labelColor,
-    variant: LabelVariant,
+    variant: labelVariant,
   });
 
   return (
