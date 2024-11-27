@@ -1,50 +1,21 @@
-import {
-  FormControl,
-  FormLabel,
-  Switch,
-  SwitchProps,
-} from "@mui/material";
+import { FormControl, FormLabel, Switch, SwitchProps } from "@mui/material";
 import React from "react";
 
 interface AviSwitchProps {
-  label:string
+  label: string;
+  value: string;
+  disabled?: boolean;
+  size?: SwitchProps["size"];
+  checked: boolean;
+  defaultChecked: boolean;
 }
 
-// type VariantType = "primary" | "secondary" | "text";
-
-// interface AviSwitch {
-//   variant: "contained" | "outlined" | "text";
-//   fontSize?: string;
-// }
-
-// const primaryStyle: AviSwitch = {
-//   variant: "contained",
-//   fontSize: "2rem !important",
-// };
-// const secondaryStyle: AviSwitch = { variant: "outlined" };
-// const textStyle: AviSwitch = { variant: "text" };
-
-// const getStyle = (variant: VariantType) => {
-//   switch (variant) {
-//     case "primary":
-//       return primaryStyle;
-//     case "secondary":
-//       return secondaryStyle;
-//     case "text":
-//       return textStyle;
-//     default:
-//       return primaryStyle;
-//   }
-// };
-
-export default function AviSwitch(props: AviSwitchProps&SwitchProps) {
-  const {label, ...other} = props
+export default function AviSwitch(props: AviSwitchProps) {
+  const { checked, defaultChecked, value, label } = props;
   return (
     <FormControl component="fieldset" variant="standard">
       <FormLabel component="legend">{label}</FormLabel>
-      <Switch
-       {...other}
-      />
+      <Switch checked={checked} defaultChecked={defaultChecked} value={value} />
     </FormControl>
   );
 }
