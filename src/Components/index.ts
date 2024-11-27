@@ -6,7 +6,7 @@ import { AviButton } from "./AviButton";
 import { AviAppBar } from "./AviAppBar";
 import { AviDrawer } from "./AviDrawer";
 import { AviSwitch } from "./AviSwitch";
-import { AviLable } from "./AviLable";
+import { AviLabel } from "./AviLabel";
 import { AviCard } from "./AviCard";
 
 export {
@@ -18,6 +18,6 @@ export {
   AviDrawer,
   AviAppBar,
   AviButton,
-  AviLable,
+  AviLabel,
   AviCard,
 };

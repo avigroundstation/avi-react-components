@@ -27,6 +27,6 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {
-  tabs:[{lable:"hi my first", value:"1"}]
+  tabs:[{label:"hi my first", value:"1"}]
   },
 };

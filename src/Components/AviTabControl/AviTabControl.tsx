@@ -2,7 +2,7 @@ import { Tab, Tabs, TabsProps } from "@mui/material";
 import React from "react";
 
 interface AviTabControlProps {
-  tabs?: { lable: string; value: string }[];
+  tabs?: { label: string; value: string }[];
 }
 
 export default function AviTabControl({
@@ -12,7 +12,7 @@ export default function AviTabControl({
   return (
     <Tabs variant="scrollable" {...other} sx={{}}>
       {tabs?.map((tab, key) => (
-        <Tab key={key} value={tab.value} label={tab.lable} />
+        <Tab key={key} value={tab.value} label={tab.label} />
       ))}
     </Tabs>
   );

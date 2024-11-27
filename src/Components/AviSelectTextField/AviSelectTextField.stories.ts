@@ -29,7 +29,7 @@ export const Primary: Story = {
   args: {
     size:"small",
     formColor:"info",
-    lable:"select",
+    label:"select",
     option:["a", "b", "c"]
   },
 };

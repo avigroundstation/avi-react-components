@@ -5,13 +5,13 @@ type VariantType =
   | "AppTitle"
   | "MainTitle"
   | "SubTitle"
-  | "Lable"
-  | "ItemLable"
+  | "Label"
+  | "ItemLabel"
   | "readOnly";
 
-interface AviLableProps {
-  LableVariant: VariantType;
-  lableColor?: TypographyProps["color"];
+interface AviLabelProps {
+  LabelVariant: VariantType;
+  labelColor?: TypographyProps["color"];
   children?: string | ReactNode;
 }
 
@@ -20,7 +20,7 @@ const getColorVariant = ({
   variant,
 }: {
   variant: VariantType;
-  color: AviLableProps["lableColor"];
+  color: AviLabelProps["labelColor"];
 }) => {
   let c: TypographyProps["color"], v: TypographyProps["variant"];
   switch (variant) {
@@ -28,11 +28,11 @@ const getColorVariant = ({
       c = "error";
       v = "h1";
       break;
-    case "ItemLable":
+    case "ItemLabel":
       c = "success";
       v = "h2";
       break;
-    case "Lable":
+    case "Label":
       c = "warning";
       v = "h3";
       break;
@@ -57,13 +57,13 @@ const getColorVariant = ({
 
 export default function AviButton({
   children,
-  LableVariant,
-  lableColor,
-}: AviLableProps) {
+  LabelVariant,
+  labelColor,
+}: AviLabelProps) {
   
   const { color, variant } = getColorVariant({
-    color: lableColor,
-    variant: LableVariant,
+    color: labelColor,
+    variant: LabelVariant,
   });
 
   return (

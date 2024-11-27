@@ -9,7 +9,7 @@ import React from "react";
 
 interface AviRadioButtonsProps {
   radioGroupName: string;
-  radioListLables: string[];
+  radioListLabels: string[];
   defaultValue: string;
   value: string;
   onChangeFunction: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -20,7 +20,7 @@ export default function AviRadioButtons({
   onChangeFunction,
   radioGroupName,
   defaultValue,
-  radioListLables,
+  radioListLabels,
   value,
 }: AviRadioButtonsProps) {
   return (
@@ -31,7 +31,7 @@ export default function AviRadioButtons({
         onChange={onChangeFunction}
         defaultValue={defaultValue}
       >
-        {radioListLables?.map((label, key) => (
+        {radioListLabels?.map((label, key) => (
           <FormControlLabel
             key={key}
             value={label}
