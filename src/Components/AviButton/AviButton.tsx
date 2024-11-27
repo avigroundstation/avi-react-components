@@ -6,7 +6,7 @@ type VariantType = "primary" | "secondary" | "text";
 interface AviButtonProps {
   variant: VariantType;
   children?: ReactNode;
-  onClick: () => {};
+  onClick: () => void
 }
 
 interface ButtonPropsStyle {

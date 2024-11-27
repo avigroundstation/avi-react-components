@@ -5,56 +5,30 @@ import {
   Radio,
   RadioGroup,
 } from "@mui/material";
-import React, { ReactNode } from "react";
+import React from "react";
 
 interface AviRadioButtonsProps {
-  RadioGroupName: string;
+  radioGroupName: string;
   radioListLables: string[];
   defaultValue: string;
   value: string;
-  OnChangeFunction: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChangeFunction: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-// type VariantType = "primary" | "secondary" | "text";
-
-// interface AviRadioButtonsPropsStyle {
-//   variant: "contained" | "outlined" | "text";
-//   fontSize?: string;
-// }
-
-// const primaryStyle: AviRadioButtonsPropsStyle = {
-//   variant: "contained",
-//   fontSize: "2rem !important",
-// };
-// const secondaryStyle: AviRadioButtonsPropsStyle = { variant: "outlined" };
-// const textStyle: AviRadioButtonsPropsStyle = { variant: "text" };
-
-// const getStyle = (variant: VariantType) => {
-//   switch (variant) {
-//     case "primary":
-//       return primaryStyle;
-//     case "secondary":
-//       return secondaryStyle;
-//     case "text":
-//       return textStyle;
-//     default:
-//       return primaryStyle;
-//   }
-// };
 
 export default function AviRadioButtons({
-  OnChangeFunction,
-  RadioGroupName,
+  onChangeFunction,
+  radioGroupName,
   defaultValue,
   radioListLables,
   value,
 }: AviRadioButtonsProps) {
   return (
     <FormControl>
-      <FormLabel>{RadioGroupName}</FormLabel>
+      <FormLabel>{radioGroupName}</FormLabel>
       <RadioGroup
         value={value}
-        onChange={OnChangeFunction}
+        onChange={onChangeFunction}
         defaultValue={defaultValue}
       >
         {radioListLables?.map((label, key) => (

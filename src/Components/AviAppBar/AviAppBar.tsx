@@ -3,12 +3,20 @@ import React, { ReactNode } from "react";
 
 interface AviAppBarProps {
   children?: ReactNode;
+  height?: `${number}rem`;
 }
 
-export default function AviAppBar({ children }: AviAppBarProps) {
+export default function AviAppBar({ children, height }: AviAppBarProps) {
   return (
-    <AppBar position="static">
-      <Toolbar>{children}</Toolbar>
-    </AppBar>
+    <div style={{ height }}>
+      <AppBar
+        sx={{
+          backdropFilter: "blur(1px)",
+          backgroundColor: "transparent",
+        }}
+      >
+        <Toolbar variant="dense">{children}</Toolbar>
+      </AppBar>
+    </div>
   );
 }

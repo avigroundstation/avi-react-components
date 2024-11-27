@@ -5,15 +5,18 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import DialogTitle from "@mui/material/DialogTitle";
 import { useTheme } from "@mui/material/styles";
 import Button from "@mui/material/Button";
-import Dialog from "@mui/material/Dialog";
+import Dialog, { DialogProps } from "@mui/material/Dialog";
 import * as React from "react";
+
+type VariantType = "error" | "info";
 
 interface AviInfoMessageProps {
   open: boolean;
   setOpen?: React.Dispatch<React.SetStateAction<boolean>>;
   content?: React.ReactNode;
-  title: { text: string; color: string };
+  title: { text: string; color: [] };
   whenClose?: () => void;
+  type: VariantType;
 }
 
 export default function AviInfoMessage(props: AviInfoMessageProps) {
@@ -21,9 +24,11 @@ export default function AviInfoMessage(props: AviInfoMessageProps) {
     content,
     open,
     setOpen,
-    title: { text, color },
+    title: { text },
     whenClose,
+    type,
   } = props;
+
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
 
@@ -34,7 +39,7 @@ export default function AviInfoMessage(props: AviInfoMessageProps) {
 
   return (
     <Dialog fullScreen={fullScreen} open={open} onClose={handleClose}>
-      <DialogTitle color={color}>{text}</DialogTitle>
+      <DialogTitle color={type}>{text}</DialogTitle>
       <DialogContent>
         <DialogContentText>{content}</DialogContentText>
       </DialogContent>
